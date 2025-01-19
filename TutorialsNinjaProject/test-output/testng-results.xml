@@ -1,25 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-17T16:25:43 IST" name="Default suite" finished-at="2024-12-17T16:25:48 IST" duration-ms="5156">
+  <suite started-at="2025-01-19T18:23:18 IST" name="TutorialsNinjaAutomationSuite" finished-at="2025-01-19T18:23:48 IST" duration-ms="30368">
     <groups>
     </groups>
-    <test started-at="2024-12-17T16:25:43 IST" name="Default test" finished-at="2024-12-17T16:25:48 IST" duration-ms="5156">
+    <test started-at="2025-01-19T18:23:18 IST" name="TutorialsNinjaAutomationTest" finished-at="2025-01-19T18:23:48 IST" duration-ms="30368">
       <class name="com.tutorialsninja.qa.testcases.Search">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.tutorialsninja.qa.testcases.Search@6340e5f0]" started-at="2024-12-17T16:25:43 IST" name="setUp" finished-at="2024-12-17T16:25:47 IST" duration-ms="4645" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.tutorialsninja.qa.testcases.Search@1d296da]" started-at="2025-01-19T18:23:44 IST" name="setUp" finished-at="2025-01-19T18:23:47 IST" duration-ms="3043" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyValidSearch()[pri:1, instance:com.tutorialsninja.qa.testcases.Search@6340e5f0]" started-at="2024-12-17T16:25:47 IST" name="verifyValidSearch" finished-at="2024-12-17T16:25:48 IST" duration-ms="306" status="PASS">
+        <test-method signature="verifyValidSearch()[pri:1, instance:com.tutorialsninja.qa.testcases.Search@1d296da]" started-at="2025-01-19T18:23:47 IST" name="verifyValidSearch" finished-at="2025-01-19T18:23:48 IST" duration-ms="675" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyValidSearch -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.tutorialsninja.qa.testcases.Search@6340e5f0]" started-at="2024-12-17T16:25:48 IST" name="closeBrowser" finished-at="2024-12-17T16:25:48 IST" duration-ms="178" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.tutorialsninja.qa.testcases.Search@1d296da]" started-at="2025-01-19T18:23:48 IST" name="closeBrowser" finished-at="2025-01-19T18:23:48 IST" duration-ms="190" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- com.tutorialsninja.qa.testcases.Search -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="com.tutorialsninja.qa.testcases.Register">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.tutorialsninja.qa.testcases.Register@459e9125]" started-at="2025-01-19T18:23:18 IST" name="setUp" finished-at="2025-01-19T18:23:27 IST" duration-ms="8940" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyRegisteringAnAccountWithMandatoryFields()[pri:1, instance:com.tutorialsninja.qa.testcases.Register@459e9125]" started-at="2025-01-19T18:23:27 IST" name="verifyRegisteringAnAccountWithMandatoryFields" finished-at="2025-01-19T18:23:28 IST" duration-ms="1841" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteringAnAccountWithMandatoryFields -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.tutorialsninja.qa.testcases.Register@459e9125]" started-at="2025-01-19T18:23:28 IST" name="closeBrowser" finished-at="2025-01-19T18:23:29 IST" duration-ms="206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.tutorialsninja.qa.testcases.Register -->
+      <class name="com.tutorialsninja.qa.testcases.Login">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.tutorialsninja.qa.testcases.Login@776aec5c]" started-at="2025-01-19T18:23:29 IST" name="setUp" finished-at="2025-01-19T18:23:33 IST" duration-ms="3831" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyLoginWithValidCredentiols()[pri:1, instance:com.tutorialsninja.qa.testcases.Login@776aec5c]" started-at="2025-01-19T18:23:33 IST" name="verifyLoginWithValidCredentiols" finished-at="2025-01-19T18:23:34 IST" duration-ms="1697" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginWithValidCredentiols -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.tutorialsninja.qa.testcases.Login@776aec5c]" started-at="2025-01-19T18:23:34 IST" name="quitBrowser" finished-at="2025-01-19T18:23:34 IST" duration-ms="182" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.tutorialsninja.qa.testcases.Login@776aec5c]" started-at="2025-01-19T18:23:34 IST" name="setUp" finished-at="2025-01-19T18:23:38 IST" duration-ms="3684" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyLoginWithInvalidEmail()[pri:2, instance:com.tutorialsninja.qa.testcases.Login@776aec5c]" started-at="2025-01-19T18:23:38 IST" name="verifyLoginWithInvalidEmail" finished-at="2025-01-19T18:23:39 IST" duration-ms="1143" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginWithInvalidEmail -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.tutorialsninja.qa.testcases.Login@776aec5c]" started-at="2025-01-19T18:23:39 IST" name="quitBrowser" finished-at="2025-01-19T18:23:39 IST" duration-ms="212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.tutorialsninja.qa.testcases.Login@776aec5c]" started-at="2025-01-19T18:23:39 IST" name="setUp" finished-at="2025-01-19T18:23:43 IST" duration-ms="3356" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyLoginWithInvalidCredentials()[pri:3, instance:com.tutorialsninja.qa.testcases.Login@776aec5c]" started-at="2025-01-19T18:23:43 IST" name="verifyLoginWithInvalidCredentials" finished-at="2025-01-19T18:23:44 IST" duration-ms="1081" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginWithInvalidCredentials -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.tutorialsninja.qa.testcases.Login@776aec5c]" started-at="2025-01-19T18:23:44 IST" name="quitBrowser" finished-at="2025-01-19T18:23:44 IST" duration-ms="183" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+      </class> <!-- com.tutorialsninja.qa.testcases.Login -->
+    </test> <!-- TutorialsNinjaAutomationTest -->
+  </suite> <!-- TutorialsNinjaAutomationSuite -->
 </testng-results>

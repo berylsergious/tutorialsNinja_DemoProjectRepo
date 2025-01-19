@@ -10,13 +10,16 @@ import org.testng.annotations.Test;
 import com.tutorialsninja.qa.base.Base;
 
 public class Search extends Base{
+	public Search () {
+		super ();
+	}
 	
 	WebDriver driver;
 	
 	
 	@BeforeMethod
 	public void setUp () {
-		driver = initializeBrowserAndLaunchWebsite ("chrome");
+		driver = initializeBrowserAndLaunchWebsite (prop.getProperty("browserName"));
 
 	}
 	
