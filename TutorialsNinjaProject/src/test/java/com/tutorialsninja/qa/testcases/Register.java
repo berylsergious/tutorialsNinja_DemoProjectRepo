@@ -10,12 +10,17 @@ import com.tutorialsninja.qa.base.Base;
 import com.tutorialsninja.qa.utils.Utilities;
 
 public class Register extends Base {
+	
+	public Register () {
+		super ();
+	}
+	
 	WebDriver driver;
 	
 	
 	@BeforeMethod
 	public void setUp () {
-		driver = initializeBrowserAndLaunchWebsite ("edge");	    
+		driver = initializeBrowserAndLaunchWebsite (prop.getProperty("browserName"));	    
 	    // Click 'My Account' -> 'Register'
 	    driver.findElement(By.xpath("//span[text()='My Account']")).click();
 	    driver.findElement(By.linkText("Register")).click();
