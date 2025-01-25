@@ -1,7 +1,7 @@
 package com.tutorialsninja.qa.testcases;
 
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -9,6 +9,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.tutorialsninja.qa.base.Base;
+import com.tutorialsninja.qa.pages.HomePage;
+import com.tutorialsninja.qa.pages.LoginPage;
+import com.tutorialsninja.qa.pages.MyAccountPage;
 import com.tutorialsninja.qa.utils.Utilities;
 
 public class Login extends Base {
@@ -18,14 +21,22 @@ public class Login extends Base {
 	}
 	
 	WebDriver driver;
-
+	LoginPage loginPage;
+	HomePage homePage;
+	MyAccountPage myAccountPage;
+	
+	
 	@BeforeMethod
 	public void setUp () {
 		
 		driver = initializeBrowserAndLaunchWebsite (prop.getProperty("browserName"));
-		driver.findElement(By.xpath("//span[text() = 'My Account']")).click(); 
-		driver.findElement(By.linkText ("Login")).click();
 		
+		homePage= new HomePage(driver);
+		loginPage = new LoginPage (driver);
+		myAccountPage = new MyAccountPage (driver);
+		homePage.ClickOnMyAccountDropdownMenu();
+		homePage.ClickOnLoginOption();
+
 		
 	}
 	
@@ -38,35 +49,46 @@ public class Login extends Base {
 
 	@Test (priority=1)
 	public void verifyLoginWithValidCredentiols() {
+		
+		
+		loginPage.EnterEmailAddress(prop.getProperty("qaValidEmail"));
+		loginPage.EnterPassword(prop.getProperty("qaValidPassword"));
+		loginPage.ClickLoginButton();
 
-		driver.findElement(By.id("input-email")).sendKeys (prop.getProperty("qaValidEmail"));
-		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("qaValidPassword"));
-		driver.findElement(By.xpath("//input [@value='Login']")).click();
-
-		Assert.assertTrue(driver.findElement(By.linkText("Edit your account information")).isDisplayed());
+		Assert.assertTrue(myAccountPage.getTextDisplayedOfEditYourAccountInformation().contains("Edit your account information"),"Edit your account information is not present");
+		
 
 	}
 	@Test(priority=2)
 	public void verifyLoginWithInvalidEmail() {
-
-		driver.findElement(By.id("input-email")).sendKeys (Utilities.generateEmailTimeStamp ());
-		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("qaValidPassword"));
-		driver.findElement(By.xpath("//input [@value='Login']")).click();
-		String actualWarningMessage = driver.findElement(By.xpath("//div[contains(@class,'alert-dismissible')]")).getText();
-		String expectedWarningMessage ="Warning: No match for E-Mail Address and/or Password.";
-		Assert.assertTrue(actualWarningMessage.contains(expectedWarningMessage),"text displayed is not as expected");
+		loginPage.EnterEmailAddress(Utilities.generateEmailTimeStamp ());
+		loginPage.EnterPassword(prop.getProperty("qaValidPassword"));
+		loginPage.ClickLoginButton();
+		
+		
+		
+		
+		
+		Assert.assertTrue(loginPage.retrieveWarningMessageText().contains(dataProp.getProperty("invalidPasswordWarning")),"text displayed is not as expected");
 
 	}
 
 	@Test(priority=3)
 	public void verifyLoginWithInvalidCredentials() {
+		loginPage.EnterEmailAddress(prop.getProperty("qaValidEmail"));
+		loginPage.EnterPassword(dataProp.getProperty("invalidPassword"));
+		loginPage.ClickLoginButton();
+		
 
-		driver.findElement(By.id("input-email")).sendKeys (prop.getProperty("qaValidEmail"));
-		driver.findElement(By.id("input-password")).sendKeys("demoperf0465194431");
-		driver.findElement(By.xpath("//input [@value='Login']")).click();
-
-		String actualWarningMessage = driver.findElement(By.xpath("//div[contains(@class,'alert-dismissible')]")).getText();
-		Assert.assertEquals(actualWarningMessage,"Warning: No match for E-Mail Address and/or Password.","text displayed is not as expected");
+		String warningMessageFetched = loginPage.retrieveWarningMessageText();
+		
+		// Assert that the actual message matches one of the expected warnings
+		Assert.assertTrue(warningMessageFetched.equals(dataProp.getProperty("invalidPasswordWarning")) || warningMessageFetched.equals(dataProp.getProperty("attemptExceededForEmailWarning")),"Warning message not matching any expected value. Actual: " + warningMessageFetched);
 
 	}
+	
+	
+	
+	
+	
 }

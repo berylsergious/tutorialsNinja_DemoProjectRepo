@@ -10,25 +10,47 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.tutorialsninja.qa.utils.Utilities;
+
 public class Base {
 	
 	
-	public Properties prop;
+	
 	WebDriver driver;
+	public Properties prop;
+	public Properties dataProp;
+	
 	
 	
 	public  Base() {
 		
+		//locate files from project directory and load values from "config.properties" file
 		prop = new Properties ();
-		
 		File propFile = new File(System.getProperty("user.dir") + "\\src\\main\\java\\com\\tutorialsninja\\qa\\configs\\config.properties");		
+		
 		try {
-		FileInputStream fis = new FileInputStream (propFile);
-		prop.load(fis);
-		} catch (Throwable e){
+			FileInputStream fis = new FileInputStream(propFile);
+			prop.load(fis);
+		}catch(Throwable e) {
 			e.printStackTrace();
 		}
+	
+		//locate files from project directory and load values from "testdata.properties" file
+		dataProp = new Properties();
+		File dataPropFile = new File(System.getProperty("user.dir")+"\\src\\main\\java\\com\\tutorialsninja\\qa\\testdata\\testdata.properties");
+		
+		try {
+			FileInputStream dataFis = new FileInputStream(dataPropFile);
+			dataProp.load(dataFis);
+		}catch(Throwable e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
+	
+	
+		
 	
 	
 	public WebDriver initializeBrowserAndLaunchWebsite (String browserName) {
@@ -43,8 +65,8 @@ public class Base {
 		}
 
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Utilities.IMPLISIT_WAIT_TIME));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Utilities.PAGE_LOAD_TIME));
 		driver.get(prop.getProperty("url"));
 
 		return driver;

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.tutorialsninja.qa.testcases.Search">
+      <class name="com.tutorialsninja.qa.testcases.Register">
         <methods>
           <include name="closeBrowser"/>
           <include name="setUp"/>
-          <include name="verifyValidSearch"/>
+          <include name="verifyClickingWithIncompleteForm"/>
         </methods>
-      </class> <!-- com.tutorialsninja.qa.testcases.Search -->
+      </class> <!-- com.tutorialsninja.qa.testcases.Register -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

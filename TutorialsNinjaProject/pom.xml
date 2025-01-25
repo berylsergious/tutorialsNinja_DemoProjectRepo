@@ -29,6 +29,14 @@
   </dependencyManagement>
 
   <dependencies>
+  
+  <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.0.9</version>
+</dependency>
+
 	  <dependency>
     <groupId>org.slf4j</groupId>
     <artifactId>slf4j-simple</artifactId>
@@ -48,7 +56,7 @@
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.10.2</version>
-    <scope>test</scope>
+    <scope>compile</scope>
 </dependency>	
     <!-- Optionally: parameterized tests support -->
   </dependencies>
