@@ -33,6 +33,11 @@ public class LoginPage {
 	
 
 	//actions
+	public void LoginWithCredentials(String EmailText, String Passphrase) {
+	EnterEmailField.sendKeys(EmailText);
+	EnterPasswordField.sendKeys(Passphrase);
+	LoginButton.click();
+	}
 	
 	public void EnterEmailAddress (String EmailText) {
 		

@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+
 import com.tutorialsninja.qa.utils.Utilities;
 
 public class Base {
@@ -23,7 +24,7 @@ public class Base {
 	
 	
 	public  Base() {
-		
+
 		//locate files from project directory and load values from "config.properties" file
 		prop = new Properties ();
 		File propFile = new File(System.getProperty("user.dir") + "\\src\\main\\java\\com\\tutorialsninja\\qa\\configs\\config.properties");		

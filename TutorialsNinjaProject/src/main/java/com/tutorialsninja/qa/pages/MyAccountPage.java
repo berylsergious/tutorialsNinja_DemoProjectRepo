@@ -14,6 +14,9 @@ public class MyAccountPage {
 	@FindBy (linkText="Edit your account information")
 	WebElement EditAccountHyperlink;
 	
+	@FindBy (linkText="Modify your address book entries")
+	WebElement AddressBookHyperlink;
+	
 	
 	
 	public  MyAccountPage (WebDriver driver) {
@@ -25,6 +28,9 @@ public class MyAccountPage {
 	
 	
 	//actions
+	public void clickModifyAddressHyperlink() {
+		AddressBookHyperlink.click();
+	}
 	
 	public String getTextDisplayedOfEditYourAccountInformation () {
 		String DisplayStatus = EditAccountHyperlink.getText();

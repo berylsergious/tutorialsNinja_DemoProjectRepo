@@ -11,6 +11,7 @@
   <!-- FIXME change it to the project's website -->
   <url>https://github.com/berylsergious/tutorialsNinja_DemoProjectRepo.git</url>
 
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>17</maven.compiler.release>
@@ -18,6 +19,9 @@
 
   <dependencyManagement>
     <dependencies>
+    
+
+
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
@@ -35,6 +39,11 @@
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
     <version>5.0.9</version>
+</dependency>
+    <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>2.20.0</version>
 </dependency>
 
 	  <dependency>
